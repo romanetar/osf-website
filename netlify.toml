@@ -31,5 +31,10 @@
   to = "https://openinfra.dev/:splat"
   status = 301
   force = true
+[[redirects]]
+  from = "/about/osf-partnerships"
+  to = "/about/openinfra-partnerships/"
+  status = 301
+  force = true
   
  

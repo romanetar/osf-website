@@ -8,7 +8,7 @@ seo:
   image: /img/OpenInfra-icon-white.jpg
   title: Partnerships
   twitterUsername: '@OpenInfraDev'
-  url: 'https://openinfra.dev/about/osf-partnerships/'
+  url: 'https://openinfra.dev/about/openinfra-partnerships/'
 title: OpenInfra Foundation Partnerships
 subTitle: >-
   The OpenInfra Foundation partners with global standardization bodies and open source
