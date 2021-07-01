@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import moment from 'moment-timezone';
-import { AjaxLoader } from "openstack-uicore-foundation/lib/components";
 import Content, { HTMLContent } from '../components/Content'
 import Layout from '../components/Layout'
 import TopBar from '../components/TopBar';
@@ -23,13 +22,15 @@ export const OpenInfraLiveTemplate = ({
 }) => {
   const PageContent = contentComponent || Content
 
-  const [today, setToday] = useState(0)
+  const [today, setToday] = useState(moment().utc().unix())
 
   useEffect(() => {
     fetch(`https://timeintervalsince1970.appspot.com/`)
       .then(response => response.json())
       .then(resultData => {
-        setToday(Math.trunc(resultData.timestamp) - 7200);
+        if (resultData.timestamp) {
+          setToday(Math.trunc(resultData.timestamp) - 7200);
+        }
       })
   }, [])
 
@@ -78,7 +79,6 @@ export const OpenInfraLiveTemplate = ({
             </section>
           </div>
           <section className="live-section">
-            <AjaxLoader relative={true} color={'#ffffff'} show={today === 0} size={120} />
             <div className="container">
               {futureEpisodes.length > 0 &&
                 <>
