@@ -46,6 +46,7 @@ episodes:
     episodeSpeakers: Belmiro Moreira (CERN), Chris Bermudez (InMotion Hosting), Sam
       Morrison(NECTAR), Brendan Conlan (Verizon Media), Erik Johansson
       (CityNetwork), Viktor Molnar (T-Systems)
+    youtubeEmbed: https://www.youtube.com/embed/G7oN2XdI__k
     linkedinLink: https://www.linkedin.com/feed/update/urn:li:ugcPost:6818945419729604608/
     episodeTitle: How OpenStack Large Clouds Manage their Spare Capacity
     youtubeLink: https://www.youtube.com/watch?v=G7oN2XdI__k
