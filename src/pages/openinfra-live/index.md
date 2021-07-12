@@ -33,8 +33,13 @@ episodes:
     calendarInvite: /static/invites/openinfralive-july22.ics
     youtubeLink: https://www.youtube.com/watch?v=-9LtBfwj03Y
   - facebookLink: https://www.facebook.com/104139126308032/posts/4134653546589883/
-    episodeDescription: A panel of users running OpenStack in production will
-      discuss and answer questions live.
+    episodeDescription: One of the reasons workloads moved to virtualization and
+      clouds was to avoid having underutilized resources. But as demand for
+      resources goes up and down, the cloud itself can now have a lot of spare
+      capacity. How do OpenStack-based large scale clouds manage their spare
+      capacity? Join this live discussion between operators of private and
+      public clouds with InMotion Hosting, CERN, NECTAR research cloud, Verizon
+      Media, City Network and Open Telekom Cloud.
     calendarInvite: /static/invites/openinfralive-july15.ics
     hidden: false
     date: 2021-07-15T14:00:00.000Z
