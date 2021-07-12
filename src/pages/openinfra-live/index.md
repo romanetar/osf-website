@@ -32,12 +32,21 @@ episodes:
       update on the project roadmap. "
     calendarInvite: /static/invites/openinfralive-july22.ics
     youtubeLink: https://www.youtube.com/watch?v=-9LtBfwj03Y
-  - hidden: false
-    date: 2021-07-15T14:00:00.000Z
-    episodeTitle: How OpenStack Large Clouds Manage their Spare Capacity
+  - facebookLink: https://www.facebook.com/104139126308032/posts/4134653546589883/
     episodeDescription: A panel of users running OpenStack in production will
       discuss and answer questions live.
     calendarInvite: /static/invites/openinfralive-july15.ics
+    hidden: false
+    date: 2021-07-15T14:00:00.000Z
+    episodeSpeakers: |-
+      Belmiro Moreira: CERN 
+      Chris Bermudez: InMotion Hosting
+      Sam Morrison: NECTAR
+      Brendan Conlan: Verizon Media
+      Erik Johansson: CityNetwork
+      Viktor Molnar: T-systems
+    linkedinLink: https://www.linkedin.com/feed/update/urn:li:ugcPost:6818945419729604608/
+    episodeTitle: How OpenStack Large Clouds Manage their Spare Capacity
     youtubeLink: https://www.youtube.com/watch?v=G7oN2XdI__k
   - facebookLink: https://www.facebook.com/104139126308032/posts/4115187991869772/
     episodeDescription: Johan Christenson, CEO of CityNetwork, hosts a discussion
