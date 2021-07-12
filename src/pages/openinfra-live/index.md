@@ -38,13 +38,9 @@ episodes:
     calendarInvite: /static/invites/openinfralive-july15.ics
     hidden: false
     date: 2021-07-15T14:00:00.000Z
-    episodeSpeakers: |-
-      Belmiro Moreira: CERN 
-      Chris Bermudez: InMotion Hosting
-      Sam Morrison: NECTAR
-      Brendan Conlan: Verizon Media
-      Erik Johansson: CityNetwork
-      Viktor Molnar: T-systems
+    episodeSpeakers: Belmiro Moreira (CERN), Chris Bermudez (InMotion Hosting), Sam
+      Morrison(NECTAR), Brendan Conlan (Verizon Media), Erik Johansson
+      (CityNetwork), Viktor Molnar (T-Systems)
     linkedinLink: https://www.linkedin.com/feed/update/urn:li:ugcPost:6818945419729604608/
     episodeTitle: How OpenStack Large Clouds Manage their Spare Capacity
     youtubeLink: https://www.youtube.com/watch?v=G7oN2XdI__k
