@@ -34,6 +34,62 @@ export const OpenInfraLiveTemplate = ({
       })
   }, [])
 
+  const buildEpisodeItem = (episode, index) => {
+    return (
+      <React.Fragment key={`featured-${index}`}>
+        <a href={episode.youtubeLink} className="up-next-highlight">Up Next: {moment.utc(episode.date).format("dddd, MMMM DD @ H:mm z")} {moment(episode.date).tz("America/Chicago").format("(HA CT)")}</a>
+        <section className="up-next-wrapper">
+          <div className="video">
+            <div className="videoWrapper">
+              <iframe width="560" height="315" src={episode.youtubeEmbed} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            </div>
+          </div>
+          <div className="details">
+            <h2>{episode.episodeTitle}</h2>
+            <p className="fix-h5" dangerouslySetInnerHTML={{ __html: episode.episodeDescription }} />
+            {/* <p className="fix-h5">
+          Have a question for the panel? <a href="https://openinfrafoundation.formstack.com/forms/oil_questions_upgrades">Submit it ahead of the live show!</a>
+        </p> */}
+            <p className="guests">
+              {episode.episodeSpeakers &&
+                <>
+                  <span>Featuring</span>
+                  {episode.episodeSpeakers}
+                </>
+              }
+            </p>
+            <div className="platforms">
+              {episode.calendarInvite &&
+                <a className="social-links" href={episode.calendarInvite.replace('/static', '')}>
+                  <img src="/img/socials/calendar.svg" className="social-icon" alt="Add OpenInfra Live to your calendar" />
+                  Add to Calendar
+                </a>
+              }
+              {episode.youtubeLink &&
+                <a className="social-links" href={episode.youtubeLink}>
+                  <img src="/img/socials/youtube.svg" className="social-icon" alt="OpenInfra Live on YouTube" />
+                  Watch on YouTube
+                </a>
+              }
+              {episode.linkedinLink &&
+                <a className="social-links" href={episode.linkedinLink}>
+                  <img src="/img/socials/linkedin.svg" className="social-icon" alt="OpenInfra Live on LinkedIn" />
+                  Watch on LinkedIn
+                </a>
+              }
+              {episode.facebookLink &&
+                <a className="social-links" href={episode.facebookLink}>
+                  <img src="/img/socials/facebook.svg" className="social-icon" alt="OpenInfra Live on Facebook" />
+                  Watch on Facebook
+                </a>
+              }
+            </div>
+          </div>
+        </section>
+      </React.Fragment>
+    )
+  }
+
   const futureEpisodes = episodes.filter(e => e.hidden === false && moment(e.date).utc().unix() > today).sort((a, b) => moment(a.date).utc().unix() - moment(b.date).utc().unix());
   const pastEpisodes = episodes.filter(e => e.hidden === false && moment(e.date).utc().unix() < today).sort((a, b) => moment(b.date).utc().unix() - moment(a.date).utc().unix());
 
@@ -84,63 +140,7 @@ export const OpenInfraLiveTemplate = ({
                 <>
                   <h2 className="section-title">{moment(futureEpisodes[0].date).utc().unix() >= today && moment(futureEpisodes[0].date).utc().unix() <= today + 7200 ? 'OpenInfra Live is Airing!' : 'The Next Episode Is Airing Soon!'}</h2>
                   {/* Next episode */}
-                  {futureEpisodes.map((episode, index) => {
-                    if (index === 0) {
-                      return (
-                        <React.Fragment key={`featured-${index}`}>
-                          <a href={episode.youtubeLink} className="up-next-highlight">Up Next: {moment.utc(episode.date).format("dddd, MMMM DD @ H:mm z")} {moment(episode.date).tz("America/Chicago").format("(HA CT)")}</a>
-                          <section className="up-next-wrapper">
-                            <div className="video">
-                              <div className="videoWrapper">
-                                <iframe width="560" height="315" src={episode.youtubeEmbed} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                              </div>
-                            </div>
-                            <div className="details">
-                              <h2>{episode.episodeTitle}</h2>
-                              <p className="fix-h5" dangerouslySetInnerHTML={{ __html: episode.episodeDescription }} />
-                              {/* <p className="fix-h5">
-                            Have a question for the panel? <a href="https://openinfrafoundation.formstack.com/forms/oil_questions_upgrades">Submit it ahead of the live show!</a>
-                          </p> */}
-                              <p className="guests">
-                                {episode.episodeSpeakers &&
-                                  <>
-                                    <span>Featuring</span>
-                                    {episode.episodeSpeakers}
-                                  </>
-                                }
-                              </p>
-                              <div className="platforms">
-                                {episode.calendarInvite &&
-                                  <a className="social-links" href={episode.calendarInvite.replace('/static', '')}>
-                                    <img src="/img/socials/calendar.svg" className="social-icon" alt="Add OpenInfra Live to your calendar" />
-                                    Add to Calendar
-                                  </a>
-                                }
-                                {episode.youtubeLink &&
-                                  <a className="social-links" href={episode.youtubeLink}>
-                                    <img src="/img/socials/youtube.svg" className="social-icon" alt="OpenInfra Live on YouTube" />
-                                    Watch on YouTube
-                                  </a>
-                                }
-                                {episode.linkedinLink &&
-                                  <a className="social-links" href={episode.linkedinLink}>
-                                    <img src="/img/socials/linkedin.svg" className="social-icon" alt="OpenInfra Live on LinkedIn" />
-                                    Watch on LinkedIn
-                                  </a>
-                                }
-                                {episode.facebookLink &&
-                                  <a className="social-links" href={episode.facebookLink}>
-                                    <img src="/img/socials/facebook.svg" className="social-icon" alt="OpenInfra Live on Facebook" />
-                                    Watch on Facebook
-                                  </a>
-                                }
-                              </div>
-                            </div>
-                          </section>
-                        </React.Fragment>
-                      )
-                    }
-                  })}
+                  { buildEpisodeItem(futureEpisodes[0], 0) }
                 </>
               }
               <section className="more-recent-wrapper" style={{ padding: futureEpisodes.length === 0 ? '0px' : '' }}>
