@@ -21,6 +21,7 @@
     "gatsby-plugin-feed": "^3.4.0",
     "gatsby-plugin-google-analytics": "^2.10.0",
     "gatsby-plugin-google-gtag": "^2.7.0",
+    "gatsby-plugin-linkedin-insight": "^1.0.1",
     "gatsby-plugin-manifest": "^2.3.3",
     "gatsby-plugin-netlify": "^2.2.1",
     "gatsby-plugin-netlify-cms": "^4.3.13",
