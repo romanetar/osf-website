@@ -34,6 +34,8 @@ companies:
         image: /img/companies/_New/Platinum/Sponsor-Logos_TencentCloud.png
       - alt: Tencent Cloud
         image: /img/companies/_New/Platinum/WNDRVR.png
+      - image: /img/1528776640793.jpg
+        alt: Test
     text: Open Infrastructure Foundation Platinum Members provide a significant
       portion of the funding to achieve the Foundation's mission of protecting,
       empowering and promoting the Open Infrastructure community and open source
